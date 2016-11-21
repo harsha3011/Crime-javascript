@@ -10,12 +10,6 @@ var c_noarrest=[];
 var thft=[];
 var aslt=[];
 var re1= new RegExp (/ASSAULT/);
-/*for (var i = 0; i<=index; i++) {
-	c_under[i]=0;
-	c_over[i]=0;
-	c_arrest[i]=0;
-	c_noarrest[i]=0;
-	}*/
 c_over.length=index;
 c_over.fill(0);
 c_under.length=index;
@@ -66,25 +60,14 @@ rl.on('line', (line) => {
 		}
 	});
 	rl.on('close',function(){
-		/*for (var i = 2016; i >= 2001; i--) 
- 		{
-   			if(thft[i-2001]==null)
-			{
-			thft[i-2001]={"year":i,"over":0,"under":0};	
-			}
-			if(aslt[i-2001]==null)
-			{
-			aslt[i-2001]={"year":i,"Arrest":0,"Noarrest":0};	
-			}
-		}*/
 		fs.writeFile("assault.JSON",JSON.stringify(aslt),function(err) {
-    if(err){
-      throw err;
-    }
-  });
+		if(err){
+		    throw err;
+		    }
+	 	});
 		fs.writeFile("theft.JSON",JSON.stringify(thft),function(err) {
-    if(err){
-      throw err;
-    }
-  });
+	    if(err){
+	      throw err;
+	    }
+	});
 });
