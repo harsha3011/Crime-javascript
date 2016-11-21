@@ -26,7 +26,7 @@ thft.length=index;
 aslt.length=index;
 var one,two,three,four,five;
 rl.on('line', (line) => {
-	ardata=line.trim().split(/,(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/);
+	ardata=line.split(/,(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/);
 	if (flag){
 		flag=false;
 		one=ardata.indexOf('ID');
